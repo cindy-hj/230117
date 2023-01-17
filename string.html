@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열</title>
+    <script>
+        // 문자열
+        // => '',""
+        // => html과 함께 사용 할 경우
+        // => 스크립트 영역 '' '<div class=""></div>'
+        // => 영어로 작업시 "I'm" 스크립트는 "" 사용
+
+        // 1. 문자의 갯수 확인 length
+        let str = "abcdef";
+        console.log(str.length);
+
+        // 2. []를 사용 index 값으로 특정 위치 텍스트 확인
+        console.log(str[2]);
+    
+        // 배열과 다른 점은 특정 위치의 값을 변경 할 수 없음 
+        str[2]="삼";
+        console.log(str);
+        
+        // 3. 영문의 대소문자 변경
+        // 소문자=>대문자 toUpperCase()
+        // 대문자=>소문자 toLowerCase()
+        let apUp = "A B C D E";
+        let apLow = "a b c d e";
+        console.log(apUp.toLowerCase());
+        console.log(apLow.toUpperCase());
+
+        // 4. indexOf(text);
+        // => text 영역에 삽입된 텍스트가 몇번째인지 인덱스 값으로 알려줌
+        // => 중복되는 문자는 첫번째 문자의 위치값만 알려줌
+        let str1 = "안녕하세요.안녕하세요";
+        console.log(str1.indexOf("녕"));
+        console.log(str1.indexOf("!"));
+        // 없는 텍스트는 -1을 출력시킴, 게시판에 욕 있는지 없는지 찾을때..
+
+        // 금지어:결석
+        // 결석이 있으면 금지어를 사용하였습니다.
+        // 결석이 없으면 참 잘했어요를 출력
+        let str2 = "결석하지마";
+        if(str2.indexOf("결석") !== -1) {
+            document.write('금지어를 사용하였습니다.')
+        } else {
+            document.write('참 잘했어요')
+        }
+
+        // 5. 문장 사이를 자르기
+        // => slice(시작값, 끝값);
+        // => 시작값은 포함
+        // => 끝값은 포함하지 않음
+        let str3 = '0123456789'
+        console.log(str3.slice(1));
+        // => 시작부터 끝까지
+        console.log(str3.slice(2,5));
+        // => 2~4까지 출력됨, 5 포함 안됨
+        console.log(str3.slice(2,-1));
+        // => 2~8까지 출력됨
+        console.log(str3.slice(-1));
+        // => 9출력
+        console.log(str3.slice(-4));
+        // => 뒤에서 부터 위치 확인 출력 6789출력
+
+        // 6. push() 배열 끝에 내용 추가
+        let a=['월','화','수'];
+        console.log(a);
+        a.push('목');
+        console.log(a);
+        
+        let list = ['01.책소개','02.들어가며','03.리뷰','04.마치며'];
+        let newList = [];
+
+        for(let i=0; i<list.length; i++){
+            newList.push(list[i].slice(3));
+        }
+        console.log(newList);
+
+        // 7. substring(n, m);
+        // => n과 m 사이 문자열 반환
+        // => m, n 순서가 바뀌어도 동작
+        let str4='0123456789'
+        console.log(str4.substring(2));
+        console.log(str4.substring(2,5));
+        // => 234 출력
+        console.log(str4.substring(5,2));
+        // => 234 출력
+        console.log(str4.substring(2,-1));
+        // => 01 출력, 음수는 0으로 인식함
+
+        // 8. substr(a,b)
+        // => a 부터 시작 
+        // => b 갯수 만큼 텍스트를 가지고 
+        console.log(str4.substr(2));
+        console.log(str4.substr(2,3));
+        console.log(str4.substr(2,5));
+        // console.log(str4.substr(2,-2));
+        // => 갯수는 음수가 없다. 오류남
+        console.log(str4.substr(-2,2));
+        // => -1은 마지막 위치에서 2개 이므로 9만 출력
+        // => -2은 뒤에서 두번째 자리인 8부터 2개의 갯수 출력 8, 9 출력
+
+        // 9. 공백을 제거 trim()
+        let blank = '       나는 공백       이      있어요  ';
+        console.log(blank.trim());
+        console.log('a');
+        // => 텍스트의 앞과 뒤에 들어가 있는 공백을 제거하여 출력
+        // => 텍스트 사이의 공백은 그대로 출력
+
+        // 10. 문자열 반복 repeat(반복횟수);
+        let b='hi';
+        console.log(b.repeat(5));
+
+        // 11. 문자열도 비교가능
+        // => 비교연산자 사용(크다, 작다)
+        console.log(1<3);
+        console.log('a'>'b');
+
+        // 12. codePointAt()
+        // => 10진수의 아스키코드
+        console.log('a'.codePointAt());
+
+        // 13. fromCodePoint()
+        // => 숫자를 문자로 표현
+        console.log(String.fromCodePoint(97));
+    </script>
+</head>
+<body>
+    <div class=""></div>
+</body>
+</html>

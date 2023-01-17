@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    // 1. toString()
+    // => 숫자를 문자로 변경
+    // => 10진수를 2진수, 16진수 형식으로 변경하기도함
+
+    let num = 10;
+    // 2진수로 변경
+    console.log(num.toString(2));
+    // 16진수로 변경
+    console.log(num.toString(16));
+
+    // 2. Math()
+    // => 수학적 내장 객체
+
+    // 2-1 원주율 PI
+    console.log(Math.PI);
+
+    let num_1=5.1;
+    let num_2=5.4;
+    let num_3=5.5;
+    let num_4=5.7;
+
+    // 2-2 소수점 올림
+    // Math.ceil()
+    console.log(Math.ceil(num_1));
+    console.log(Math.ceil(num_2));
+    console.log(Math.ceil(num_3));
+    console.log(Math.ceil(num_4));
+
+    // 2-3 소수점 내림
+    // Math.floor()
+    console.log(Math.floor(num_1));
+    console.log(Math.floor(num_2));
+    console.log(Math.floor(num_3));
+    console.log(Math.floor(num_4));
+
+    // 2-4 소수점 반올림
+    // Math.round()
+    console.log(Math.round(num_1));
+    console.log(Math.round(num_2));
+    console.log(Math.round(num_3));
+    console.log(Math.round(num_4));
+    
+    // + 만약 30.1234 라는 소수점을 소수점 2번째 자리까지 표현하고 싶다면?
+    console.log((Math.round(30.1234*100))/100);
+
+    // 두번째 해결방법
+    // 2-5. toFixed()
+    // => 나타내고 싶은 소수점 자리를 인수로 작성하여 표현
+    // => 문자형으로 숫자를 반환하므로 Number를 사용하여 작업하는 경우가 많음
+    console.log(30.1234.toFixed(0));
+    // => 지정 인수가 기존 할당된 소수점 갯수 보다 작을때
+    // => 소수점 전부 없음
+    console.log(30.1234.toFixed(8));
+    // => 지정 인수가 기존 할당된 소수점 갯수 보다 작을때
+    // => 추가된 자리수를 0으로 채워줌
+
+    let a = 30.1234;
+    let b = Number(a.toFixed(0));
+    console.log(b+b);
+
+    // 2-6. NaN인지 아닌지 판별
+    // isNaN()
+    // => isNaN() 은 자기자신과 비교해도 서로 다름으로 인식
+    // 숫자로 변경할 수 없는 숫자이면 true
+    // 숫자로 변경할 수 있는 것은 false
+
+    let x = Number('x'); //:NaN
+    console.log(x==NaN);
+    console.log(x===NaN);
+    console.log(NaN==NaN);
+
+    let c = 30;
+    let d = Number(c);
+    let e = Number(30);
+    // 숫자
+    console.log(isNaN(30));
+    // 숫자를 할당 받은 변수
+    console.log(isNaN(c));
+    // 문자형 => 숫자형으로 변경한 변수
+    console.log(isNaN(x));
+    // 숫자가 있는 할당된 변수를 숫자형으로 변경한 변수
+    console.log(isNaN(d));
+    // 숫자를 숫자형으로 변경한 변수
+    console.log(isNaN(e));
+
+    // 2-7. 문자를 정수형
+    // + parseInt
+    // => 문자를 포함하고 있어도 숫자형으로 시작이 되면 숫자로 인식
+    let margin = '10px';
+    console.log(margin);
+    console.log(parseInt(margin));
+    
+    
+    // + Number 
+    console.log(Number(margin));
+    // => 숫자로 시작을 해도 문자가 포함되어 있으면 문자로 인식
+
+    // 2-8 문자를 실수형
+    // => parseFloat
+    // => 소수점 포함
+    let f='10.25px';
+    console.log(parseFloat(a));
+    console.log(parseInt(a));
+
+    // 2-9 Math.random();
+    // => 0~1 사이 숫자를 무작위로 생성
+    console.log(Math.random());
+    console.log(Math.random());
+    console.log(Math.random());
+
+    // 만약 1~100 사이의 임의 숫자를 뽑고 싶다면? 
+    console.log(Math.floor((Math.random())*100)+1);
+    // +1 안해주면 0 나올때도 있다
+
+    // 2-10 최대값 Math.max(), 최소값 Math.min()
+    console.log(Math.max(1, 4, -1, 6, 10));
+    console.log(Math.min(1, 4, -1, 6, 10));
+
+    // 2-11 절대값 Math.abs()
+    console.log(Math.abs(-3));
+
+    // 2-12 제곱 Math.pow(n,m);
+    // => n의 m승
+    console.log(Math.pow(2,10));
+
+    // 2-13. 제곱근 Math.sqrt();
+    console.log(Math.sqrt(16));
+
+
+    </script>
+</head>
+
+<body>
+    
+</body>
+</html>
