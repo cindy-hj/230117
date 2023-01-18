@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머 함수</title>
+</head>
+<script>
+    // 타이머 함수
+    // 1.일정시간 이후에 한번만 실행되는 함수
+    // setTimeout()
+    function fn(){
+        console.log("빵");
+    }
+
+    //3초 있다가 한번만 실행
+    setTimeout(fn, 3000);
+    setTimeout(function(){
+        console.log("빵");
+    },3000);
+
+    // 변수 설정한것 뿐만 아니라 실행도 됨
+    let a=setTimeout(function(){
+        console.log("빵");
+    },2000);
+    clearTimeout(a)
+    // =>setTimeout 함수 정지
+
+    // 2.일정시간 이후 마다 계속 일정시간 간격을 두고 반복 함수
+    // setInterval()
+    setInterval(fn, 1000);
+    setInterval(function(){
+        console.log("빵");
+    },1000);
+
+    let b = setInterval(function(){
+        console.log("빵");
+    },1000);
+    clearInterval(b);
+    // =>setInterval() 정지
+
+    //5초 동안 접속한 시간 보여주기
+    let num=0;
+    function showCount(){
+        console.log(`접속하신 시간은 ${num++} 입니다.`);
+        if(num>5){
+            clearInterval(sTime);
+        }
+    }
+    let sTime=setInterval(showCount,1000);
+</script>
+<body>
+    
+</body>
+</html>
