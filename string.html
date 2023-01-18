@@ -54,16 +54,14 @@
         // => 시작값은 포함
         // => 끝값은 포함하지 않음
         let str3 = '0123456789'
-        console.log(str3.slice(1));
-        // => 시작부터 끝까지
-        console.log(str3.slice(2,5));
-        // => 2~4까지 출력됨, 5 포함 안됨
-        console.log(str3.slice(2,-1));
-        // => 2~8까지 출력됨
-        console.log(str3.slice(-1));
-        // => 9출력
-        console.log(str3.slice(-4));
-        // => 뒤에서 부터 위치 확인 출력 6789출력
+        console.log(str3.slice(1)); // 123456789
+        console.log(str3.slice(2,5)); // 234
+        console.log(str3.slice(2,-1)); // 2345678
+        console.log(str3.slice(-1)); // 9
+        console.log(str3.slice(-4)); // 6789
+
+        let str3_1 = '이걸자르려면?'
+        console.log(str3_1.slice(1)); // 걸자르려면?
 
         // 6. push() 배열 끝에 내용 추가
         let a=['월','화','수'];
@@ -99,6 +97,7 @@
         console.log(str4.substr(2,5));
         // console.log(str4.substr(2,-2));
         // => 갯수는 음수가 없다. 오류남
+        console.log(str4.substr(-1,2))
         console.log(str4.substr(-2,2));
         // => -1은 마지막 위치에서 2개 이므로 9만 출력
         // => -2은 뒤에서 두번째 자리인 8부터 2개의 갯수 출력 8, 9 출력
@@ -106,7 +105,6 @@
         // 9. 공백을 제거 trim()
         let blank = '       나는 공백       이      있어요  ';
         console.log(blank.trim());
-        console.log('a');
         // => 텍스트의 앞과 뒤에 들어가 있는 공백을 제거하여 출력
         // => 텍스트 사이의 공백은 그대로 출력
 
